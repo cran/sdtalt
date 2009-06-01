@@ -4,7 +4,7 @@
 \description{
   Using Bates' lme4 package (2007) to run multilevel generalized linear models
   as an alternative to the traditional approaches to sdt. Details in Wright,
-  Horry and Skagerberg (in press, Behavior Research Methods).
+  Horry and Skagerberg (2009).
 }
 \usage{
 mlmsdt(subno, isold, sold, covs = NULL, lk = "logit", vardiff = TRUE, modify = TRUE, int = FALSE, item = NULL, ...)
@@ -24,38 +24,36 @@ mlmsdt(subno, isold, sold, covs = NULL, lk = "logit", vardiff = TRUE, modify = T
 \details{
  subno -
     if only one unique subno is found, the function singlelevel is run.
-    This is because lmer requires more than one subject. \cr
+    This is because lmer requires more than one subject.
  isold and sold -
     the assumption is that these have the old values higher than the low values,
     but as long as they are in the same direction the d' and lnOR output will
     be fine. The 0/1 dummy variable coding is for ease of interpreting the
-    coefficients. modify also affects these. \cr
+    coeficients. modify also affects these.
  lk -
     it is assumed only logit and probit are used, so the output
-    is designed for this but others can be used.\cr
+    is designed for this but others can be used.
  item -
     this allows you to run item response models. Baayen et al. (2008) is worth
-    consulting if using this.\cr
+    consulting if using this.
  More complex models can be run accessing the lmer function directly.
 }
 \value{
-  Output to the screen includes values for diagnosticity (lnOR or d'). \cr An
-  S4 object is created.
+  Output to the screen includes values for diagnosticity (lnOR or d'). An
+  S4 object is created/
 }
 \references{
-Baayen, R.H., Davidson, D.J., \& Bates, D.M. (2008). Mixed-effects modeling
+Baayen, R.H., Davidson, D.J., & Bates, D.M. (2008). Mixed-effects modeling
 with crossed random effects for subjects and items.
-\emph{Journal of Memory and Language}.\cr
+Journal of Memory and Language.
 Bates, D. (2007). lme4: Linear mixed-effects models using S4 classes.
-Version 0.99875-9. http://cran.r-project.org/.\cr
-Wright, D.B., Horry, R., \& Skagerberg, E.M. (in press). Functions for
+Version 0.99875-9. 
+Wright, D.B., Horry, R., & Skagerberg, E.M. (2009). Functions for
 traditional and multilevel approaches to signal detection theory.
-\emph{Behavior Research Methods}.
+Behavior Research Methods, 41, 257-267.
 }
 \author{Daniel B. Wright}
-\seealso{sdt}
 \examples{
-set.seed(47)
 id <- rep(1:10,each=10)
 isold <- rbinom(100,1,.5)
 covariate <- runif(100,0,.3)

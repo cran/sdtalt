@@ -1,7 +1,7 @@
 \name{face4b}
 \alias{face4b}
 \docType{data}
-\title{Horry and Wright (2008): Black faces}
+\title{Horry and Wright (2008) Black faces}
 \description{
   Data for the Black faces only from Horry and Wright (2008)
 }
@@ -17,9 +17,9 @@
   }
 }
 \references{
- Horry, R. \& Wright, D.B. (2008). I know your face but not where I saw you:
+ Horry, R. & Wright, D.B. (2008). I know your face but not where I saw you:
  Context memory is impaired for other race faces.
- \emph{Psychonomic Bulletin & Review}, \bold{15}, 610-614.
+ Psychonomic Bulletin & Review, 15, 610-614.
 }
 \examples{
 data(face4b)

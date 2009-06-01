@@ -4,6 +4,7 @@
 \docType{package}
 \title{
 SDT statistics and Alternatives
+~~ sdtalt ~~
 }
 \description{
 Allows users, via sdt, to calculate several statistics (including user defined
@@ -15,19 +16,19 @@ user may include covariates with the mlmsdt function.
 \tabular{ll}{
 Package: \tab sdtalt\cr
 Type: \tab Package\cr
-Version: \tab 0.1-0\cr
-Date: \tab 2008-05-18\cr
-License: \tab GPL\cr
+Version: \tab 1.0-1\cr
+Date: \tab 2009-06-01\cr
+License: \tab Unlimited)\cr
 LazyLoad: \tab yes\cr
 }
 }
 \author{
-Daniel B. Wright\cr
-Maintainer: Daniel B. Wright <danw@sussex.ac.uk>
+Daniel B. Wright
+Maintainer: Daniel B. Wright <dwright@fiu.edu>
 }
 \references{
-Wright, D.B., Horry, R., \& Skagerberg, E.M. (in press). Functions for
-traditional and multilevel approaches to signal detection theory. \emph{
-Behavior Research Methods}.
+Wright, D.B., Horry, R., & Skagerberg, E.M. (2009). Functions for
+traditional and multilevel approaches to signal detection theory.
+Behavior Research Methods, 41, 257-267.
 }
 \keyword{ package }

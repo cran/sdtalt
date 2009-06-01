@@ -4,7 +4,7 @@
 \description{
   Changes data in the form of hits, false alarms, misses, and correct
   rejections (which is suitable for the sdt function) for each individual
-  into a file with one trial per line suitable for mlmsdt. See Wright,
+  into a file with one trial per like suitable for mlmsdt. See Wright,
   Horry and Skagerberg (in press, Behavior Research Methods).
 }
 \usage{
@@ -25,9 +25,9 @@ format4to2(x, cnames = c("subno", "isold", "saysold"), code = 0.5, ...)
   produced.
 }
 \references{
-Wright, D.B., Horry, R., \& Skagerberg, E.M. (in press). Functions for
+Wright, D.B., Horry, R., & Skagerberg, E.M. (2009). Functions for
 traditional and multilevel approaches to signal detection theory.
-\emph{Behavior Research Methods}. }
+Behavior Research Methods, 41, 257-267. }
 \author{Daniel B. Wright}
 \examples{
 format4 <- rbinom(100,25,.5)

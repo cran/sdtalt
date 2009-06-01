@@ -94,13 +94,12 @@ function (hits,fas,misses,cr,flat=0,pmeans=FALSE,meas="all",wk=.5,runboot=FALSE,
     print(apply(statsfile,2,meantr),digits=3)
     print("The standard deviations:",quote=FALSE)
     print(sd(statsfile),digits=3)
-   if (runboot){
- # Following is used if running code with source function
-     bootatt <- search()
-     if (length(bootatt[bootatt=="package:boot"])<1) {
-       bootinlib <- installed.packages()
-       if (length(bootinlib[bootinlib[,1]=="boot"])<2){
-         print("Need to install boot (Canty, 2007). Choose a mirror", quote=FALSE)
+    if (runboot){
+      bootatt <- search()
+      if (length(bootatt[bootatt=="package:boot"])<1) {
+        bootinlib <- installed.packages()
+        if (length(bootinlib[bootinlib[,1]=="boot"])<2){
+          print("Need to install boot (Canty, 2007). Choose a mirror", quote=FALSE)
     install.packages("boot")}
     library("boot")}
       for (j in 1:dim(statsfile)[2]){

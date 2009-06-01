@@ -4,7 +4,7 @@
 \title{Fear of negative evaluation and memory conformity}
 \description{
   These data compare fear of negative evaluation with memory conformity
-  using a social recognition memory procedure. They are currently under review.
+  using a social recognition memory procedure.
 }
 \usage{data(fne)}
 \format{
@@ -19,7 +19,7 @@
   }
 }
 \references{
-  Wright, D.B., London, K., \& Waechter, M. (under review). Memory conformity
+  Wright, D.B., London, K., & Waechter, M. (under review). Memory conformity
   and social anxiety among a sample of adolescents.
 }
 \keyword{datasets}

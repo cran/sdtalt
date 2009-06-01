@@ -1,7 +1,7 @@
 \name{confexp}
 \alias{confexp}
 \docType{data}
-\title{Skagerberg and Wright's (2008) Experimental data}
+\title{Skagerberg & Wright (2008) Experimental}
 \description{
   Data from the conditions receiving either the low or high power task in
   Skagerberg and Wright's study of memory conformity.
@@ -18,9 +18,9 @@
   }
 }
 \references{
- Skagerberg, E. M. \& Wright, D. B. (2008). Manipulating power can affect
+ Skagerberg, E. M. & Wright, D. B. (2008). Manipulating power can affect
  memory conformity.
- \emph{Applied Cognitive Psychology}, \bold{22}, 207-216.
+ Applied Cognitive Psychology, 22, 207-216.
 }
 \examples{
 data(confexp)

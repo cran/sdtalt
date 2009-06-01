@@ -4,7 +4,6 @@
 \title{Horry and Wright (2008)}
 \description{
   Data from Horry and Wright's study of the cross race context effect
-  in a format for mlmsdt.
 }
 \usage{data(facec)}
 \format{
@@ -17,8 +16,8 @@
   }
 }
 \references{
- Horry, R. \& Wright, D.B. (2008). I know your face but not where I saw you:
- Context memory is impaired for other race faces.
- \emph{Psychonomic Bulletin & Review}, \bold{15}, 610-614.
+  Horry, R. & Wright, D.B. (2008). I know your face but not where I saw you:
+  Context memory is impaired for other race faces.
+  Psychonomic Bulletin & Review, 15, 610-614.
 }
 \keyword{datasets}

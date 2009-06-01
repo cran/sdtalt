@@ -1,7 +1,7 @@
 \name{confcontr}
 \alias{confcontr}
 \docType{data}
-\title{Skagerberg and Wright's (2008) control data}
+\title{Skagerberg and Wright (2008) control}
 \description{
   These are the data from the control group in Skagerberg and Wright's
   study of memory conformity. Basically, this is the simplest old/new
@@ -15,12 +15,11 @@
     \item{\code{sayold}}{a numeric vector}
     \item{\code{isold}}{a numeric vector}
   }
-}
-}
+ } 
 \references{
- Skagerberg, E. M. \& Wright, D. B. (2008). Manipulating power can
+ Skagerberg, E. M. & Wright, D. B. (2008). Manipulating power can
  affect memory conformity.
- \emph{Applied Cognitive Psychology}, \bold{22}, 207-216.
+ Applied Cognitive Psychology, 22, 207-216.
 }
 \examples{
 data(confcontr)

@@ -1,7 +1,7 @@
 \name{face4w}
 \alias{face4w}
 \docType{data}
-\title{Horry and Wright (2008): White faces}
+\title{Horry and Wright (2008) - White}
 \description{
   Data from Horry and Wright for White faces only
 }
@@ -17,8 +17,8 @@
   }
 }
 \references{
- Horry, R. \& Wright, D.B. (2008). I know your face but not where I saw you:
+ Horry, R. & Wright, D.B. (2008). I know your face but not where I saw you:
  Context memory is impaired for other race faces.
- \emph{Psychonomic Bulletin & Review}, \bold{15}, 610-614.
+ Psychonomic Bulletin & Review, 15, 610-614.
 }
 \keyword{datasets}

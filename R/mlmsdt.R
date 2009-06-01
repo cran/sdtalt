@@ -15,22 +15,14 @@ function(subno,isold,sold,covs=NULL,lk="logit",vardiff=TRUE,modify=TRUE,int=FALS
   print("so the function singlelevel will be used.",quote=FALSE)
   print("  ",quote=FALSE)
   return(singlelevel(isold,sold,covs,lk=lk,...))}
- # The following used when function downloaded with source function
- #l4att <- search()
- #if (length(l4att[l4att=="package:lme4"])<1) {
- #  l4inlib <- installed.packages()
- #   if (length(l4inlib[l4inlib[,1]=="lme4"])<2){
- #   print("Need to install lme4 (Bates, 2008). Choose a mirror", quote=FALSE)
- #   install.packages("lme4")}
- #  library("lme4")}
  if (vardiff == FALSE && identical(item,NULL))
-   mod1 <- lmer(sold ~ isold + (1|subno),family=binomial(link=lk),method="Laplace")
+   mod1 <- lmer(sold ~ isold + (1|subno),family=binomial(link=lk))
  if (vardiff && identical(item,NULL))
-   mod1 <- lmer(sold ~ isold + (isold|subno),family=binomial(link=lk),method="Laplace")
+   mod1 <- lmer(sold ~ isold + (isold|subno),family=binomial(link=lk))
  if (vardiff == FALSE && identical(item,NULL)==FALSE)
-   mod1 <- lmer(sold ~ isold + (1|subno) + (1|item),family=binomial(link=lk),method="Laplace")
+   mod1 <- lmer(sold ~ isold + (1|subno) + (1|item),family=binomial(link=lk))
  if (vardiff  && identical(item,NULL)==FALSE)
-   mod1 <- lmer(sold ~ isold + (isold|subno) + (1|item),family=binomial(link=lk),method="Laplace")
+   mod1 <- lmer(sold ~ isold + (isold|subno) + (1|item),family=binomial(link=lk))
  if (lk=="probit") print("Overall estimated d' ",quote=FALSE)
  if (lk=="logit")print("Overall estimated lnOR ",quote=FALSE)
  print(format(fixef(mod1)[2],digits=4),quote=FALSE)
@@ -42,21 +34,21 @@ function(subno,isold,sold,covs=NULL,lk="logit",vardiff=TRUE,modify=TRUE,int=FALS
    if (ncovs > 1) cov <- covs[,i]
    if (is.factor(cov) || is.ordered(cov)){
      if (vardiff == FALSE && identical(item,NULL)){
-      mod2 <- lmer(sold~-1+cov+isold:cov+(1|subno),family=binomial(link=lk),method="Laplace")
-      m1 <- lmer(sold~cov+isold+(1|subno),family=binomial(link=lk),method="Laplace")
-      m2 <- lmer(sold~cov*isold+(1|subno),family=binomial(link=lk),method="Laplace")}
+      mod2 <- lmer(sold~-1+cov+isold:cov+(1|subno),family=binomial(link=lk))
+      m1 <- lmer(sold~cov+isold+(1|subno),family=binomial(link=lk))
+      m2 <- lmer(sold~cov*isold+(1|subno),family=binomial(link=lk))}
      if (vardiff == FALSE && identical(item,NULL)==FALSE){
-      mod2 <- lmer(sold~-1+cov+isold:cov+(1|item)+(1|subno),family=binomial(link=lk),method="Laplace")
-      m1 <- lmer(sold~cov+isold+(1|item)+(1|subno),family=binomial(link=lk),method="Laplace")
-      m2 <- lmer(sold~cov*isold+(1|item)+(1|subno),family=binomial(link=lk),method="Laplace")}
+      mod2 <- lmer(sold~-1+cov+isold:cov+(1|item)+(1|subno),family=binomial(link=lk))
+      m1 <- lmer(sold~cov+isold+(1|item)+(1|subno),family=binomial(link=lk))
+      m2 <- lmer(sold~cov*isold+(1|item)+(1|subno),family=binomial(link=lk))}
      if (vardiff == TRUE && identical(item,NULL)){
-      mod2 <- lmer(sold~-1+cov+isold:cov+(isold|subno),family=binomial(link=lk),method="Laplace")
-      m1 <- lmer(sold~cov+isold+(isold|subno),family=binomial(link=lk),method="Laplace")
-      m2 <- lmer(sold~cov*isold+(isold|subno),family=binomial(link=lk),method="Laplace")}
+      mod2 <- lmer(sold~-1+cov+isold:cov+(isold|subno),family=binomial(link=lk))
+      m1 <- lmer(sold~cov+isold+(isold|subno),family=binomial(link=lk))
+      m2 <- lmer(sold~cov*isold+(isold|subno),family=binomial(link=lk))}
      if (vardiff == TRUE && identical(item,NULL)==FALSE){
-      mod2 <- lmer(sold~-1+cov+isold:cov+(1|item)+(isold|subno),family=binomial(link=lk),method="Laplace")
-      m1 <- lmer(sold~cov+isold+(1|item)+(isold|subno),family=binomial(link=lk),method="Laplace")
-      m2 <- lmer(sold~cov*isold+(1|item)+(isold|subno),family=binomial(link=lk),method="Laplace")}
+      mod2 <- lmer(sold~-1+cov+isold:cov+(1|item)+(isold|subno),family=binomial(link=lk))
+      m1 <- lmer(sold~cov+isold+(1|item)+(isold|subno),family=binomial(link=lk))
+      m2 <- lmer(sold~cov*isold+(1|item)+(isold|subno),family=binomial(link=lk))}
     if (lk == "probit") print("The estimated d' values for the groups are:",quote=FALSE)
     if (lk == "logit") print("The estimated lnOR values for the groups are:",quote=FALSE)
     vals <- length(unique(cov))
@@ -66,21 +58,21 @@ function(subno,isold,sold,covs=NULL,lk="logit",vardiff=TRUE,modify=TRUE,int=FALS
    if (is.numeric(cov)){
     varc <- (cov-mean(cov))/sd(cov)
      if (vardiff == FALSE && identical(item,NULL)){
-      mod2 <- lmer(sold~varc+isold:varc+(1|subno),family=binomial(link=lk),method="Laplace")
-      m1 <- lmer(sold~varc+isold+(1|subno),family=binomial(link=lk),method="Laplace")
-      m2 <- lmer(sold~varc*isold+(1|subno),family=binomial(link=lk),method="Laplace")}
+      mod2 <- lmer(sold~varc+isold:varc+(1|subno),family=binomial(link=lk))
+      m1 <- lmer(sold~varc+isold+(1|subno),family=binomial(link=lk))
+      m2 <- lmer(sold~varc*isold+(1|subno),family=binomial(link=lk))}
      if (vardiff == FALSE && identical(item,NULL)==FALSE){
-      mod2 <- lmer(sold~varc+isold:varc+(1|item)+(1|subno),family=binomial(link=lk),method="Laplace")
-      m1 <- lmer(sold~varc+isold+(1|item)+(1|subno),family=binomial(link=lk),method="Laplace")
-      m2 <- lmer(sold~varc*isold+(1|item)+(1|subno),family=binomial(link=lk),method="Laplace")}
+      mod2 <- lmer(sold~varc+isold:varc+(1|item)+(1|subno),family=binomial(link=lk))
+      m1 <- lmer(sold~varc+isold+(1|item)+(1|subno),family=binomial(link=lk))
+      m2 <- lmer(sold~varc*isold+(1|item)+(1|subno),family=binomial(link=lk))}
      if (vardiff == TRUE && identical(item,NULL)){
-      mod2 <- lmer(sold~varc+isold:varc+(isold|subno),family=binomial(link=lk),method="Laplace")
-      m1 <- lmer(sold~varc+isold+(isold|subno),family=binomial(link=lk),method="Laplace")
-      m2 <- lmer(sold~varc*isold+(isold|subno),family=binomial(link=lk),method="Laplace")}
+      mod2 <- lmer(sold~varc+isold:varc+(isold|subno),family=binomial(link=lk))
+      m1 <- lmer(sold~varc+isold+(isold|subno),family=binomial(link=lk))
+      m2 <- lmer(sold~varc*isold+(isold|subno),family=binomial(link=lk))}
      if (vardiff == TRUE && identical(item,NULL)==FALSE){
-      mod2 <- lmer(sold~varc+isold:varc+(1|item)+(isold|subno),family=binomial(link=lk),method="Laplace")
-      m1 <- lmer(sold~varc+isold+(1|item)+(isold|subno),family=binomial(link=lk),method="Laplace")
-      m2 <- lmer(sold~varc*isold+(1|item)+(isold|subno),family=binomial(link=lk),method="Laplace")}
+      mod2 <- lmer(sold~varc+isold:varc+(1|item)+(isold|subno),family=binomial(link=lk))
+      m1 <- lmer(sold~varc+isold+(1|item)+(isold|subno),family=binomial(link=lk))
+      m2 <- lmer(sold~varc*isold+(1|item)+(isold|subno),family=binomial(link=lk))}
    if (lk == "probit")
       print("The estimated shift in d' for a standard deviation shift is:",quote=FALSE)
     if (lk == "logit")
@@ -114,6 +106,6 @@ if (ncovs > 1){
  if (vardiff && identical(item,NULL)==FALSE)
    fmint <- as.formula(paste("sold ~ (isold|subno) +(1|item)+ isold*",cs))
    }
-final <- lmer(fmint,family=binomial(link=lk),method="Laplace")
+final <- lmer(fmint,family=binomial(link=lk))
 return(final)}
 
