@@ -26,7 +26,7 @@ function(subno,isold,sold,covs=NULL,lk="logit",vardiff=TRUE,modify=TRUE,int=FALS
  if (lk=="probit") print("Overall estimated d' ",quote=FALSE)
  if (lk=="logit")print("Overall estimated lnOR ",quote=FALSE)
  print(format(fixef(mod1)[2],digits=4),quote=FALSE)
- print(summary(mod1)@coefs)
+ print(summary(mod1))
  if (is.null(covs)) return(mod1)
  ncovs <- max(1,dim(covs)[2])
  for (i in 1:ncovs){
